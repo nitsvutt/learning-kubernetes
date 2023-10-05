@@ -19,8 +19,9 @@
         <li>Worker Node:
         <ul>
             <li>Kubelet</li>
-            <li>Kube Proxy</li>
+            <li>Kube-proxy</li>
             <li>Container Runtime</li>
         </ul>
+        <li>Container Networking Interface (CNI): A framework for creating network interfaces for Containers.</li>
     </ul>
 </p>
