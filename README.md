@@ -7,7 +7,7 @@
 </p>
 
 <p>
-    Kubenetes cluster:
+    <b>Kubenetes components:</b>
     <ul>
         <li><b>Control Plane:</b></li>
         <ul>
