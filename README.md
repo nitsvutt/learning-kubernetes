@@ -3,5 +3,5 @@
 ## 1. Kubernetes architecture
 
 <p align="center">
-    <img src="https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-icon.svg" title="Kubernetes architecture" alt="kubernetes architecture"/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture-diagram.png" title="Kubernetes architecture" alt="kubernetes architecture"/>
 </p>
