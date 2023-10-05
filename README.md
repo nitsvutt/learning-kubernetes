@@ -9,18 +9,18 @@
 <p>
     Kubenetes cluster:
     <ul>
-        <li>Control Plane:</li>
+        <li><b>Control Plane:</b></li>
         <ul>
-            <li>API Server</li>
-            <li>Scheduler</li>
-            <li>Controller Manager</li>
-            <li>etcd</li>
+            <li><b>API Server:</b></li>
+            <li><b>Scheduler:</b></li>
+            <li><b>Controller Manager:</b></li>
+            <li><b>etcd:</b></li>
         </ul>
-        <li>Worker Node:
+        <li><b>Worker Node:</b></li>
         <ul>
-            <li>Kubelet</li>
-            <li>Kube-proxy</li>
-            <li>Container Runtime</li>
+            <li><b>Kubelet:</b></li>
+            <li><b>Kube-proxy:</b></li>
+            <li><b>Container Runtime:</b></li>
         </ul>
         <li><b>Container Networking Interface (CNI):</b> A framework for creating network interfaces for Containers.</li>
     </ul>
