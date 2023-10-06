@@ -28,12 +28,11 @@
 ## 2. Set up Kubernetes cluster with kubeadm
 
 ### 2.1. Set up SSH, vim, and cURL:
-<ul>
-    <li>Switch to the superuser: </li>
+- Switch to the superuser:
 ```
 su root
 ```
-    <li>Install openssh-server, vim, and curl: </li>
+- Install openssh-server, vim, and curl:
 ```
 apt update
 apt upgrade -y
@@ -41,4 +40,3 @@ apt install openssh-server vim curl -y
 ufw allow ssh
 systemctl start ssh
 ```
-</ul>
