@@ -82,3 +82,74 @@ EOF
 modprobe overlay
 modprobe br_netfilter
 ```
+
+### 2.6 Enable IP forwarding:
+```
+tee /etc/sysctl.d/kubernetes.conf<<EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+EOF
+```
+```
+sysctl --system
+```
+
+### 2.7. Install container runtime:
+- Install requirement dependencies for containerd:
+```
+apt install gnupg2 software-properties-common apt-transport-https ca-certificates -y
+```
+- Add docker repository:
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
+- Install containerd:
+```
+apt update
+apt install containerd.io -y
+```
+- Configure containerd:
+```
+containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
+sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+```
+- Start and enable containerd:
+```
+containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
+sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+```
+
+### 2.8. Install kubectl, kubelet, and kubeadm:
+- Add Kubernetes repository:
+```
+curl -fsSL  https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k8s.gpg
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+- Install kubectl, kubelet, and kubeadm:
+```
+apt update
+apt install kubelet kubeadm kubectl -y
+```
+
+### 2.9. Initialize Kubernetes cluster using kubeadm (only on master node):
+- Initialize:
+```
+kubeadm init --control-plane-endpoint=master
+```
+- Configure kubectl:
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+- Deploy CNI:
+```
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+```
+
+### 2.10. Join Kubernetes cluster (only on worker node):
+```
+kubeadm join master:6443 --token kw3rku.qgibpx77dv1fzq33 --discovery-token-ca-cert-hash sha256:4f88b416dee4c7d777d76640e8fea03b628f355f90d01bc4c29d59d31b704a00
+```
