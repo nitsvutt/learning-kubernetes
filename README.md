@@ -9,7 +9,7 @@
 <p>
     <b>Kubenetes components:</b>
     <ul>
-        <li><b>Control Plane:</b></li>
+        <li><b>Control Plane:</b> orchestrate containers and maintain the desired state of the cluster.</li>
         <ul>
             <li><b>API Server:</b></li>
             <li><b>Scheduler:</b></li>
@@ -22,6 +22,6 @@
             <li><b>Kube-proxy:</b></li>
             <li><b>Container Runtime:</b></li>
         </ul>
-        <li><b>Container Networking Interface (CNI):</b> A framework for creating network interfaces for Containers.</li>
+        <li><b>Container Networking Interface (CNI):</b> create network interfaces for Containers.</li>
     </ul>
 </p>
