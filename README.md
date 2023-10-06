@@ -64,3 +64,21 @@ vi /etc/hosts
 192.168.0.106   worker1
 192.168.0.107   worker2
 ```
+
+### 2.4. Disable swap space:
+```
+sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
+swapoff -a
+```
+
+### 2.5. Add kernel modules:
+```
+tee /etc/modules-load.d/containerd.conf <<EOF
+overlay
+br_netfilter
+EOF
+```
+```
+modprobe overlay
+modprobe br_netfilter
+```
