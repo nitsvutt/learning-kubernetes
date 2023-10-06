@@ -11,7 +11,7 @@
     <ul>
         <li><b>Control Plane:</b> orchestrate containers and maintain the desired state of the cluster.</li>
         <ul>
-            <li><b>API Server:</b></li>
+            <li><b>API Server:</b> </li>
             <li><b>Scheduler:</b></li>
             <li><b>Controller Manager:</b></li>
             <li><b>etcd:</b></li>
@@ -22,6 +22,6 @@
             <li><b>Kube-proxy:</b></li>
             <li><b>Container Runtime:</b></li>
         </ul>
-        <li><b>Container Networking Interface (CNI):</b> create network interfaces for Containers.</li>
+        <li><b>Container Networking Interface (CNI):</b> create network interfaces for containers.</li>
     </ul>
 </p>
