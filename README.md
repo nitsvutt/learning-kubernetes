@@ -40,3 +40,17 @@ apt install openssh-server vim curl -y
 ufw allow ssh
 systemctl start ssh
 ```
+
+### 2.2. Set static hostname:
+- Master:
+```
+hostnamectl set-hostname master --static
+```
+- Worker1:
+```
+hostnamectl set-hostname worker1 --static
+```
+- Worker2:
+```
+hostnamectl set-hostname worker2 --static
+```
