@@ -25,11 +25,7 @@
     </ul>
 </p>
 
-<details><summary>
-
 ## 2. Set up Kubernetes cluster with kubeadm
-
-</summary>
 
 ### 2.1. Set up SSH, vim, and cURL:
 - Switch to the superuser:
@@ -157,4 +153,3 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/
 ```
 kubeadm join master:6443 --token kw3rku.qgibpx77dv1fzq33 --discovery-token-ca-cert-hash sha256:4f88b416dee4c7d777d76640e8fea03b628f355f90d01bc4c29d59d31b704a00
 ```
-</details>
