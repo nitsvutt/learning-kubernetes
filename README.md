@@ -7,7 +7,6 @@
 </p>
 
 <p>
-    <b>Kubenetes components:</b>
     <ul>
         <li><b>Control Plane:</b> orchestrates containers and maintains the desired state of the cluster.</li>
         <ul>
@@ -25,3 +24,19 @@
         <li><b>Container Networking Interface (CNI):</b> creates network interfaces for containers.</li>
     </ul>
 </p>
+
+## 2. Set up Kubernetes cluster with kubeadm
+
+### 2.1. Set up SSH, vim, and cURL:
+<ul>
+    <li>Switch to the superuser: </li>
+    ```su root```
+    <li>Install openssh-server, vim, and curl: </li>
+    ```
+    apt update
+    apt upgrade -y
+    apt install openssh-server vim curl -y
+    ufw allow ssh
+    systemctl start ssh
+    ```
+</ul>
