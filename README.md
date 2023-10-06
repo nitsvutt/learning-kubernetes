@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Kubernetes architecture](#architecture)
-2. [Example2](#example2)
+2. [Set up Kubernetes cluster with kubeadm](#set-up)
 3. [Third Example](#third-example)
 4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
@@ -23,7 +23,7 @@
     - **Container Runtime:** manages the execution and lifecycle of containers within the Kubernetes environment.
     - **Container Networking Interface (CNI):** creates network interfaces for containers.
 
-## 2. Set up Kubernetes cluster with kubeadm
+## Set up Kubernetes cluster with kubeadm
 
 ### 2.1. Set up SSH, vim, and cURL:
 - Switch to the superuser:
