@@ -2,7 +2,8 @@
 
 ## Table of Contents
 1. [Kubernetes architecture](#architecture)
-2. [Set up Kubernetes cluster with kubeadm](#set-up)
+2. [How does Kubernetes work](#work)
+3. [Set up Kubernetes cluster with kubeadm](#set-up)
 
 <div id="architecture"/>
 
@@ -23,11 +24,19 @@
     - **Container Runtime:** manages the execution and lifecycle of containers within the Kubernetes environment.
     - **Container Networking Interface (CNI):** creates network interfaces for containers.
 
+<div id="work"/>
+
+## 2. How does Kubernetes work
+
+<p align="center">
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=700/>
+</p>
+
 <div id="set-up"/>
 
-## 2. Set up Kubernetes cluster with kubeadm
+## 3. Set up Kubernetes cluster with kubeadm
 
-### 2.1. Set up SSH, vim, and cURL:
+### 3.1. Set up SSH, vim, and cURL:
 - Switch to the superuser:
 ```
 su root
@@ -41,7 +50,7 @@ ufw allow ssh
 systemctl start ssh
 ```
 
-### 2.2. Set static hostname:
+### 3.2. Set static hostname:
 - Master:
 ```
 hostnamectl set-hostname master --static
@@ -55,7 +64,7 @@ hostnamectl set-hostname worker1 --static
 hostnamectl set-hostname worker2 --static
 ```
 
-### 2.3. Append ip, hostname to host file:
+### 3.3. Append ip, hostname to host file:
 ```
 vi /etc/hosts
 ```
@@ -65,13 +74,13 @@ vi /etc/hosts
 192.168.0.107   worker2
 ```
 
-### 2.4. Disable swap space:
+### 3.4. Disable swap space:
 ```
 sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
 swapoff -a
 ```
 
-### 2.5. Add kernel modules:
+### 3.5. Add kernel modules:
 ```
 tee /etc/modules-load.d/containerd.conf <<EOF
 overlay
@@ -83,7 +92,7 @@ modprobe overlay
 modprobe br_netfilter
 ```
 
-### 2.6 Enable IP forwarding:
+### 3.6 Enable IP forwarding:
 ```
 tee /etc/sysctl.d/kubernetes.conf<<EOF
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -95,7 +104,7 @@ EOF
 sysctl --system
 ```
 
-### 2.7. Install container runtime:
+### 3.7. Install container runtime:
 - Install requirement dependencies for containerd:
 ```
 apt install gnupg2 software-properties-common apt-transport-https ca-certificates -y
@@ -121,7 +130,7 @@ containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
 sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 ```
 
-### 2.8. Install kubectl, kubelet, and kubeadm:
+### 3.8. Install kubectl, kubelet, and kubeadm:
 - Add Kubernetes repository:
 ```
 curl -fsSL  https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k8s.gpg
@@ -133,7 +142,7 @@ apt update
 apt install kubelet kubeadm kubectl -y
 ```
 
-### 2.9. Initialize Kubernetes cluster using kubeadm (only on master node):
+### 3.9. Initialize Kubernetes cluster using kubeadm (only on master node):
 - Initialize:
 ```
 kubeadm init --control-plane-endpoint=master
@@ -149,7 +158,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 ```
 
-### 2.10. Join Kubernetes cluster (only on worker node):
+### 3.10. Join Kubernetes cluster (only on worker node):
 ```
 kubeadm join master:6443 --token kw3rku.qgibpx77dv1fzq33 --discovery-token-ca-cert-hash sha256:4f88b416dee4c7d777d76640e8fea03b628f355f90d01bc4c29d59d31b704a00
 ```
