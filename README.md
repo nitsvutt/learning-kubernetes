@@ -10,26 +10,26 @@
 ## 1. Kubernetes architecture
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=600/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=700/>
 </p>
 
-- **Control Plane:** orchestrates containers and maintains the desired state of the cluster.
+- **Control Plane (master):** orchestrates containers and maintains the desired state of the cluster.
     - **API Server:** works as the central hub that expose the Kubernetes API. All users and other cluster components communicate with the cluster via the API server.
+    - **etcd:** is a consistent and highly-available key value store that stores all cluster data.
     - **Scheduler:** recieves pod creation requests and select the best node that satisfies the pod requirements.
     - **Controller Manager:** runs continuously and ensures that the kubernetes resource/object is in the desired state.
-    - **etcd:** is a consistent and highly-available key value store that stores all cluster data.
 - **Worker Node:** runs containerized applications.
     - **Kubelet:** communicates with the API server and works with the pod specification as a daemon.
-    - **Kube-proxy:** maintains network rules on the node and load-balances network traffic between application components.
+    - **kube-proxy:** maintains network rules on the node and load-balances network traffic between application components.
     - **Container Runtime:** manages the execution and lifecycle of containers within the Kubernetes environment.
-    - **Container Networking Interface (CNI):** creates network interfaces for containers.
+- **Container Networking Interface (CNI):** creates network interfaces for containers.
 
 <div id="work"/>
 
 ## 2. How does Kubernetes work
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=600/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=700/>
 </p>
 
 <div id="set-up"/>
