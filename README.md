@@ -6,7 +6,9 @@
 3. [Third Example](#third-example)
 4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
-## Kubernetes architecture
+<div id='architecture'/>
+
+## 1. Kubernetes architecture
 
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture-diagram.png" title="Kubernetes architecture" alt="kubernetes architecture" width=700/>
