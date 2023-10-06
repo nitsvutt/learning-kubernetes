@@ -54,3 +54,8 @@ hostnamectl set-hostname worker1 --static
 ```
 hostnamectl set-hostname worker2 --static
 ```
+
+### 2.3. Append ip, hostname to host file:
+```
+vi /etc/hosts
+```
