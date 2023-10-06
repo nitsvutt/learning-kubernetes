@@ -59,3 +59,8 @@ hostnamectl set-hostname worker2 --static
 ```
 vi /etc/hosts
 ```
+```
+192.168.0.105   master
+192.168.0.106   worker1
+192.168.0.107   worker2
+```
