@@ -31,7 +31,7 @@
 <ul>
     <li>Switch to the superuser: </li>
     ```
-    $ su root
+    su root
     ```
     <li>Install openssh-server, vim, and curl: </li>
     ```
@@ -42,3 +42,11 @@
     systemctl start ssh
     ```
 </ul>
+
+```
+apt update
+apt upgrade -y
+apt install openssh-server vim curl -y
+ufw allow ssh
+systemctl start ssh
+```
