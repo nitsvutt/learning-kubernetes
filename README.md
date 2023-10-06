@@ -30,7 +30,9 @@
 ### 2.1. Set up SSH, vim, and cURL:
 <ul>
     <li>Switch to the superuser: </li>
-    ```su root```
+    ```
+    $ su root
+    ```
     <li>Install openssh-server, vim, and curl: </li>
     ```
     apt update
