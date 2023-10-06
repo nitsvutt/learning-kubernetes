@@ -7,15 +7,15 @@
 </p>
 
 - **Control Plane:** orchestrates containers and maintains the desired state of the cluster.
-- **API Server:** works as the central hub that expose the Kubernetes API. All users and other cluster components communicate with the cluster via the API server.
-- **Scheduler:** recieves pod creation requests and select the best node that satisfies the pod requirements.
-- **Controller Manager:** runs continuously and ensures that the kubernetes resource/object is in the desired state.
-- **etcd:** is a consistent and highly-available key value store that stores all cluster data.
+    - **API Server:** works as the central hub that expose the Kubernetes API. All users and other cluster components communicate with the cluster via the API server.
+    - **Scheduler:** recieves pod creation requests and select the best node that satisfies the pod requirements.
+    - **Controller Manager:** runs continuously and ensures that the kubernetes resource/object is in the desired state.
+    - **etcd:** is a consistent and highly-available key value store that stores all cluster data.
 - **Worker Node:** runs containerized applications.
-- **Kubelet:** communicates with the API server and works with the pod specification as a daemon.
-- **Kube-proxy:** maintains network rules on the node and load-balances network traffic between application components.
-- **Container Runtime:** manages the execution and lifecycle of containers within the Kubernetes environment.
-- **Container Networking Interface (CNI):** creates network interfaces for containers.
+    - **Kubelet:** communicates with the API server and works with the pod specification as a daemon.
+    - **Kube-proxy:** maintains network rules on the node and load-balances network traffic between application components.
+    - **Container Runtime:** manages the execution and lifecycle of containers within the Kubernetes environment.
+    - **Container Networking Interface (CNI):** creates network interfaces for containers.
 
 ## 2. Set up Kubernetes cluster with kubeadm
 
