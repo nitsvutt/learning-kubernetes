@@ -10,7 +10,7 @@
 ## 1. Kubernetes architecture
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=700/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=600/>
 </p>
 
 - **Control Plane:** orchestrates containers and maintains the desired state of the cluster.
@@ -29,7 +29,7 @@
 ## 2. How does Kubernetes work
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=700/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=600/>
 </p>
 
 <div id="set-up"/>
