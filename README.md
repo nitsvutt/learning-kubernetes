@@ -199,45 +199,25 @@ kubeadm reset
 ### 4.2. kubectl:
 
 ### 4.2.1. kubectl get:
-#### 4.2.1.1. Get nodes:
+More often than not, use with options "-o wide" to see more information, "-o yaml" to get the description file, and "--field-selector=''" to get object matching with the specified selector.
+- Get nodes:
 ```
 kubectl get nodes
 ```
 ```
-kubectl get nodes -o wide
+kubectl get node worker3
 ```
-#### 4.2.1.2. Get pods:
-- All namespaces:
+- Get pods:
 ```
-kubectl get pods --all-namespaces
+kubectl get pods -A
 ```
-```
-kubectl get pods --all-namespaces -o wide
-```
-```
-kubectl get pods --all-namespaces -o yaml
-```
-- Specified namespace:
 ```
 kubectl get pods --namespace=kube-system
 ```
 ```
-kubectl get pods --namespace=kube-system -o wide
+kubectl get pod etcd-master --namespace=kube-system
 ```
-```
-kubectl get pods --namespace=kube-system -o yaml
-```
-- Specified pod:
-```
-kubectl get pod --namespace=kube-system etcd-master
-```
-```
-kubectl get pod --namespace=kube-system etcd-master -o wide
-```
-```
-kubectl get pod --namespace=kube-system etcd-master -o yaml
-```
-#### 4.2.1.3. Get services:
+- Get services:
 ```
 kubectl get services
 ```
