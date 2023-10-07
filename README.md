@@ -203,7 +203,6 @@ kubeadm reset
 ```
 kubectl get nodes
 ```
-or get more information with:
 ```
 kubectl get nodes -o wide
 ```
