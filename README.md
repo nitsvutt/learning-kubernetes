@@ -223,4 +223,4 @@ kubectl get services
 - Options:
     - `-o wide`: view more information.
     - `-o yaml`: view the description file.
-    - `--field-selector key:value`: view which matching selectors.
+    - `--field-selector key:value`: view matched selectors.
