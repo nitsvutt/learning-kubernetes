@@ -208,7 +208,7 @@ kubectl get no worker3
 ```
 - Get namespaces:
 ```
-kubectl get namespaces
+kubectl get namespace
 ```
 ```
 kubectl get namespace kube-system
@@ -246,4 +246,8 @@ kubectl get deploy calico-kube-controllers -n kube-system
 - Options:
     - `-o wide`: view more information.
     - `-o yaml`: view the description file.
-    - `--field-selector key:value`: filter with selectors.
+    - `-l key=value`: filter with label selectors.
+
+### 4.2.2. kubectl describe:
+- Options:
+    - `-l key=value`: filter with label selectors.
