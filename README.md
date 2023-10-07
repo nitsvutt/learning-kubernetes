@@ -201,24 +201,47 @@ kubeadm reset
 ### 4.2.1. kubectl get:
 - Get nodes:
 ```
-kubectl get nodes
+kubectl get no
 ```
 ```
-kubectl get node worker3
+kubectl get no worker3
+```
+- Get namespaces:
+```
+kubectl get namespaces
+```
+```
+kubectl get namespace kube-system
 ```
 - Get pods:
 ```
-kubectl get pods -A
+kubectl get po -A
 ```
 ```
-kubectl get pods --namespace kube-system
+kubectl get po -n kube-system
 ```
 ```
-kubectl get pod etcd-master --namespace kube-system
+kubectl get po etcd-master -n kube-system
 ```
 - Get services:
 ```
-kubectl get services
+kubectl get service -A
+```
+```
+kubectl get service -n kube-system
+```
+```
+kubectl get service kubernetes -n kube-system
+```
+- Get deployments:
+```
+kubectl get deploy -A
+```
+```
+kubectl get deploy -n kube-system
+```
+```
+kubectl get deploy calico-kube-controllers -n kube-system
 ```
 - Options:
     - `-o wide`: view more information.
