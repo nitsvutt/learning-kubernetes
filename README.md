@@ -4,6 +4,7 @@
 1. [Kubernetes architecture](#architecture)
 2. [How does Kubernetes work](#work)
 3. [Set up Kubernetes cluster with kubeadm](#set-up)
+4. [Common commands](#commands)
 
 <div id="architecture"/>
 
@@ -168,7 +169,29 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 ```
 
-### 3.10. Join Kubernetes cluster (only on worker node):
+### 3.10. Join Kubernetes cluster (only on worker nodes):
 ```
 kubeadm join master:6443 --token qvafpa.64eu73o0evu394ka --discovery-token-ca-cert-hash sha256:9c58e793cb9067ab131da5074cfe60eba1007ea1e5a3824d399df7310985ec80
+```
+
+<div id="commands"/>
+
+## 4. Common command:
+
+### 4.1. kubeadm:
+- Initialize the Control Plane:
+```
+kubeadm init --control-plane-endpoint=master
+```
+- Get join command:
+```
+kubeadm token create --print-join-command
+```
+- Join a Kubernetes cluster:
+```
+kubeadm join master:6443 --token qvafpa.64eu73o0evu394ka --discovery-token-ca-cert-hash sha256:9c58e793cb9067ab131da5074cfe60eba1007ea1e5a3824d399df7310985ec80
+```
+- Reset kubeadm:
+```
+kubeadm reset
 ```
