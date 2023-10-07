@@ -51,6 +51,8 @@ su root
 apt update
 apt upgrade -y
 apt install openssh-server vim curl -y
+```
+```
 ufw allow ssh
 systemctl start ssh
 ```
