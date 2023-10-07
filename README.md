@@ -195,3 +195,25 @@ kubeadm join master:6443 --token qvafpa.64eu73o0evu394ka --discovery-token-ca-ce
 ```
 kubeadm reset
 ```
+
+### 4.2. kubectl:
+
+### 4.2.1. kubectl get:
+- Get nodes:
+    - Standard information:
+```
+kubectl get nodes
+```
+    - More about internal/external ip, os, kernel, and container runtime:
+```
+kubectl get nodes -o wide
+```
+- Get pods:
+```
+kubectl get nodes
+```
+- Get services:
+```
+kubectl get services
+```
+
