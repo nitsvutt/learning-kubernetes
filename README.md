@@ -68,6 +68,10 @@ hostnamectl set-hostname worker1 --static
 ```
 hostnamectl set-hostname worker2 --static
 ```
+- Worker3:
+```
+hostnamectl set-hostname worker3 --static
+```
 
 ### 3.3. Append ip, hostname to host file:
 ```
@@ -77,6 +81,7 @@ vi /etc/hosts
 192.168.0.105   master
 192.168.0.106   worker1
 192.168.0.107   worker2
+192.168.0.108   worker3
 ```
 
 ### 3.4. Disable swap space:
@@ -165,5 +170,5 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/
 
 ### 3.10. Join Kubernetes cluster (only on worker node):
 ```
-kubeadm join master:6443 --token kw3rku.qgibpx77dv1fzq33 --discovery-token-ca-cert-hash sha256:4f88b416dee4c7d777d76640e8fea03b628f355f90d01bc4c29d59d31b704a00
+kubeadm join master:6443 --token qvafpa.64eu73o0evu394ka --discovery-token-ca-cert-hash sha256:9c58e793cb9067ab131da5074cfe60eba1007ea1e5a3824d399df7310985ec80
 ```
