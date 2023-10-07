@@ -199,7 +199,6 @@ kubeadm reset
 ### 4.2. kubectl:
 
 ### 4.2.1. kubectl get:
-More often than not, use with options "-o wide" to see more information, "-o yaml" to get the description file, and "--field-selector=''" to get object matching with the specified selector.
 - Get nodes:
 ```
 kubectl get nodes
@@ -221,4 +220,5 @@ kubectl get pod etcd-master --namespace=kube-system
 ```
 kubectl get services
 ```
+- More often than not, use with options "-o wide" to see more information, "-o yaml" to get the description file, and "--field-selector=''" to get object matching with the specified selector.
 
