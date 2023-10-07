@@ -137,7 +137,7 @@ sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config
 - Start and enable containerd:
 ```
 systemctl restart containerd
-sudo systemctl enable containerd
+systemctl enable containerd
 ```
 
 ### 3.8. Install kubectl, kubelet, and kubeadm:
