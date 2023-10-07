@@ -4,7 +4,7 @@
 1. [Kubernetes architecture](#architecture)
 2. [How does Kubernetes work](#work)
 3. [Set up Kubernetes cluster with kubeadm](#set-up)
-4. [Common commands](#commands)
+4. [Cheat sheet](#cheat-sheet)
 
 <div id="architecture"/>
 
@@ -174,9 +174,9 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/
 kubeadm join master:6443 --token qvafpa.64eu73o0evu394ka --discovery-token-ca-cert-hash sha256:9c58e793cb9067ab131da5074cfe60eba1007ea1e5a3824d399df7310985ec80
 ```
 
-<div id="commands"/>
+<div id="cheat-sheet"/>
 
-## 4. Common command:
+## 4. Cheat sheet:
 
 ### 4.1. kubeadm:
 - Initialize the Control Plane:
