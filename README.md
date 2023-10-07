@@ -199,15 +199,15 @@ kubeadm reset
 ### 4.2. kubectl:
 
 ### 4.2.1. kubectl get:
-- Get nodes:
+#### 4.2.1.1. Get nodes:
 ```
 kubectl get nodes
 ```
 ```
 kubectl get nodes -o wide
 ```
-- Get pods:
-    - All namespaces:
+#### 4.2.1.2. Get pods:
+- All namespaces:
 ```
 kubectl get pods --all-namespaces
 ```
@@ -217,7 +217,7 @@ kubectl get pods --all-namespaces -o wide
 ```
 kubectl get pods --all-namespaces -o yaml
 ```
-    - Specified namespace:
+- Specified namespace:
 ```
 kubectl get pods --namespace=kube-system
 ```
@@ -227,7 +227,7 @@ kubectl get pods --namespace=kube-system -o wide
 ```
 kubectl get pods --namespace=kube-system -o yaml
 ```
-    - Specified pod:
+- Specified pod:
 ```
 kubectl get pod --namespace=kube-system etcd-master
 ```
@@ -237,7 +237,7 @@ kubectl get pod --namespace=kube-system etcd-master -o wide
 ```
 kubectl get pod --namespace=kube-system etcd-master -o yaml
 ```
-- Get services:
+#### 4.2.1.3. Get services:
 ```
 kubectl get services
 ```
