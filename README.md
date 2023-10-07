@@ -221,6 +221,6 @@ kubectl get pod etcd-master --namespace kube-system
 kubectl get services
 ```
 - Options:
-    - `-o wide` to see more information.
-    - `-o yaml` to get the description file.
-    - `--field-selector key:value` to get which matching specified selectors.
+    - `-o wide`: view more information.
+    - `-o yaml`: view the description file.
+    - `--field-selector key:value`: view which matching specified selectors.
