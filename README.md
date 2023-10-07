@@ -160,8 +160,8 @@ kubeadm init --control-plane-endpoint=master
 - Configure kubectl:
 ```
 mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 - Deploy CNI:
 ```
