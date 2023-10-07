@@ -207,6 +207,7 @@ kubectl get nodes
 kubectl get nodes -o wide
 ```
 - Get pods:
++ All namespaces:
 ```
 kubectl get pods --all-namespaces
 ```
@@ -216,6 +217,7 @@ kubectl get pods --all-namespaces -o wide
 ```
 kubectl get pods --all-namespaces -o yaml
 ```
++ Specified namespace:
 ```
 kubectl get pods --namespace=kube-system
 ```
@@ -225,6 +227,7 @@ kubectl get pods --namespace=kube-system -o wide
 ```
 kubectl get pods --namespace=kube-system -o yaml
 ```
++ Specified pod:
 ```
 kubectl get pod --namespace=kube-system etcd-master
 ```
