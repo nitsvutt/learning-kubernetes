@@ -154,7 +154,7 @@ apt install kubelet kubeadm kubectl -y
 ```
 
 ### 3.9. Initialize Kubernetes cluster using kubeadm (only on master node):
-- Initialize:
+- Initialize the Control Plane:
 ```
 kubeadm init --control-plane-endpoint=master
 ```
