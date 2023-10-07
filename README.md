@@ -200,11 +200,10 @@ kubeadm reset
 
 ### 4.2.1. kubectl get:
 - Get nodes:
-    - Standard information:
 ```
 kubectl get nodes
 ```
-    - More about internal/external ip, os, kernel, and container runtime:
+or get more information with:
 ```
 kubectl get nodes -o wide
 ```
