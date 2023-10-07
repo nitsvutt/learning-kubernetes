@@ -214,10 +214,25 @@ kubectl get pods --all-namespaces
 kubectl get pods --all-namespaces -o wide
 ```
 ```
+kubectl get pods --all-namespaces -o yaml
+```
+```
 kubectl get pods --namespace=kube-system
 ```
 ```
 kubectl get pods --namespace=kube-system -o wide
+```
+```
+kubectl get pods --namespace=kube-system -o yaml
+```
+```
+kubectl get pod --namespace=kube-system etcd-master
+```
+```
+kubectl get pod --namespace=kube-system etcd-master -o wide
+```
+```
+kubectl get pod --namespace=kube-system etcd-master -o yaml
 ```
 - Get services:
 ```
