@@ -220,7 +220,7 @@ kubectl get pod etcd-master --namespace=kube-system
 ```
 kubectl get services
 ```
-- More often than not, use option:
+- Options:
     - `-o wide` to see more information.
     - `-o yaml` to get the description file.
     - `--field-selector=''` to get objects matching with the specified selector.
