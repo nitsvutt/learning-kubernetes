@@ -211,10 +211,10 @@ kubectl get node worker3
 kubectl get pods -A
 ```
 ```
-kubectl get pods --namespace=kube-system
+kubectl get pods --namespace kube-system
 ```
 ```
-kubectl get pod etcd-master --namespace=kube-system
+kubectl get pod etcd-master --namespace kube-system
 ```
 - Get services:
 ```
@@ -223,4 +223,4 @@ kubectl get services
 - Options:
     - `-o wide` to see more information.
     - `-o yaml` to get the description file.
-    - `--field-selector=''` to get objects matching with the specified selector.
+    - `--field-selector key:value` to get which matching specified selectors.
