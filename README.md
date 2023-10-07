@@ -208,7 +208,16 @@ kubectl get nodes -o wide
 ```
 - Get pods:
 ```
-kubectl get nodes
+kubectl get pods --all-namespaces
+```
+```
+kubectl get pods --all-namespaces -o wide
+```
+```
+kubectl get pods --namespace=kube-system
+```
+```
+kubectl get pods --namespace=kube-system -o wide
 ```
 - Get services:
 ```
