@@ -198,22 +198,22 @@ kubeadm reset
 
 ### 4.2. kubectl:
 
-### 4.2.1. kubectl get:
-- Get nodes:
+### 4.2.1. kubectl get/describe:
+- Nodes:
 ```
 kubectl get no
 ```
 ```
 kubectl get no worker3
 ```
-- Get namespaces:
+- Namespaces:
 ```
 kubectl get namespace
 ```
 ```
 kubectl get namespace kube-system
 ```
-- Get pods:
+- Pods:
 ```
 kubectl get po -A
 ```
@@ -223,7 +223,7 @@ kubectl get po -n kube-system
 ```
 kubectl get po etcd-master -n kube-system
 ```
-- Get services:
+- Services:
 ```
 kubectl get service -A
 ```
@@ -233,7 +233,24 @@ kubectl get service -n kube-system
 ```
 kubectl get service kubernetes -n kube-system
 ```
-- Get deployments:
+- PersitentVolumes:
+```
+kubectl get pv
+```
+```
+kubectl get pv metadata
+```
+- PersitentVolumeClaims:
+```
+kubectl get pvc -A
+```
+```
+kubectl get pvc -n kube-system
+```
+```
+kubectl get pvc metadata -n kube-system
+```
+- Deployments:
 ```
 kubectl get deploy -A
 ```
@@ -243,11 +260,10 @@ kubectl get deploy -n kube-system
 ```
 kubectl get deploy calico-kube-controllers -n kube-system
 ```
-- Options:
+- Get options:
     - `-o wide`: view more information.
     - `-o yaml`: view the description file.
     - `-l key=value`: filter with label selectors.
-
-### 4.2.2. kubectl describe:
-- Options:
+- Describe options:
     - `-l key=value`: filter with label selectors.
+### 4.2.2. kubectl describe:
