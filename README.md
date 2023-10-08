@@ -260,10 +260,10 @@ kubectl get deploy -n kube-system
 ```
 kubectl get deploy calico-kube-controllers -n kube-system
 ```
-> - Get options:
->    - `-o wide`: view more information.
->    - `-o yaml`: view the description file.
->    - `-l key=value`: filter with label selectors.
-> - Describe options:
->    - `-l key=value`: filter with label selectors.
+> Get options:
+> - `-o wide`: view more information.
+> - `-o yaml`: view the description file.
+> - `-l key=value`: filter with label selectors.
+> Describe options:
+> - `-l key=value`: filter with label selectors.
 ### 4.2.2. kubectl create:
