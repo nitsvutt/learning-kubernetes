@@ -198,7 +198,7 @@ kubeadm reset
 
 ### 4.2. kubectl:
 
-### 4.2.1. kubectl get/describe:
+#### 4.2.1. kubectl get/describe:
 - Nodes:
 ```
 kubectl get no
@@ -269,10 +269,10 @@ kubectl get deploy calico-kube-controllers -n kube-system
 > 
 > Describe options:
 > - `-l key=value`: filter with label selectors.
-### 4.2.3. kubectl create:
-### 4.2.4. kubectl apply:
-### 4.2.5. kubectl edit:
-### 4.2.6. kubectl label:
-### 4.2.7. kubectl anotate:
-### 4.2.8. kubectl logs:
-### 4.2.9. kubectl delete:
+#### 4.2.3. kubectl create:
+#### 4.2.4. kubectl apply:
+#### 4.2.5. kubectl edit:
+#### 4.2.6. kubectl label:
+#### 4.2.7. kubectl anotate:
+#### 4.2.8. kubectl logs:
+#### 4.2.9. kubectl delete:
