@@ -225,13 +225,13 @@ kubectl get po etcd-master -n kube-system
 ```
 - Services:
 ```
-kubectl get service -A
+kubectl get svc -A
 ```
 ```
-kubectl get service -n kube-system
+kubectl get svc -n kube-system
 ```
 ```
-kubectl get service kubernetes -n kube-system
+kubectl get svc kubernetes -n kube-system
 ```
 - PersitentVolumes:
 ```
