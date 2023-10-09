@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-app
+spec:
+  ports:
+  - port: 3000
+  selector:
+    app: todo-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app
+spec:
+  selector:
+    matchLabels:
+      app: todo-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      containers:
+      - image: nitsvutt/todo-app:latest
+        name: todo-app
+        env:
+        - name: MYSQL_HOST
+          value: mysql
+        - name: MYSQL_USER
+          value: root
+        - name: MYSQL_PASSWORD
+          value: admin
+        - name: MYSQL_DB
+          value: todo
+        ports:
+        - containerPort: 3000
+          name: todo-app
