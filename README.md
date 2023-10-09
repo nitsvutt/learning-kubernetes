@@ -69,10 +69,6 @@ hostnamectl set-hostname worker1 --static
 ```
 hostnamectl set-hostname worker2 --static
 ```
-- Worker3:
-```
-hostnamectl set-hostname worker3 --static
-```
 
 ### 3.3. Append ip, hostname to host file:
 ```
@@ -82,7 +78,6 @@ vi /etc/hosts
 192.168.0.105   master
 192.168.0.106   worker1
 192.168.0.107   worker2
-192.168.0.108   worker3
 ```
 
 ### 3.4. Disable swap space:
@@ -208,10 +203,10 @@ kubectl get no worker3
 ```
 - Namespaces:
 ```
-kubectl get namespace
+kubectl get ns
 ```
 ```
-kubectl get namespace kube-system
+kubectl get ns kube-system
 ```
 - Pods:
 ```
@@ -250,8 +245,6 @@ kubectl get pvc -n kube-system
 ```
 kubectl get pvc metadata -n kube-system
 ```
-- ConfigMaps:
-- Secrets:
 - Deployments:
 ```
 kubectl get deploy -A
