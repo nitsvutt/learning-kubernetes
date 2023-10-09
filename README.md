@@ -263,9 +263,59 @@ kubectl get deploy calico-kube-controllers -n kube-system
 > Describe options:
 > - `-l key=value`: filter with label selectors.
 #### 4.2.3. kubectl create:
+- Namespaces:
+```
+kubectl create ns todo-app
+```
+```
+kubectl create -f ns.yaml
+```
+- Other resources:
+```
+kubectl create -f todo-app.yaml -A
+```
+```
+kubectl create -f todo-app.yaml -n todo-app
+```
+> Options:
+> - `-l key=value`: define label selectors.
 #### 4.2.4. kubectl apply:
+- Namespaces:
+```
+kubectl apply -f ns.yaml
+```
+- Other resources:
+```
+kubectl apply -f todo-app.yaml -A
+```
+```
+kubectl apply -f todo-app.yaml -n todo-app
+```
+> Note:
+> - `kubectl create` and `kubectl apply` can be used to create resources interchangeably.
+> - `kubectl create` does not support updating resources.
 #### 4.2.5. kubectl edit:
 #### 4.2.6. kubectl label:
 #### 4.2.7. kubectl anotate:
 #### 4.2.8. kubectl logs:
 #### 4.2.9. kubectl delete:
+- Namespaces:
+```
+kubectl delete ns todo-app
+```
+- Other resources:
+```
+kubectl delete svc mysql-pv-volume -A
+```
+```
+kubectl delete svc mysql-pv-volume -n todo-app
+```
+- With .yaml files:
+```
+kubectl delete -f todo-app.yaml -A
+```
+```
+kubectl delete -f todo-app.yaml -n todo-app
+```
+> Options:
+> - `-l key=value`: filter with label selectors.
