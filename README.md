@@ -298,7 +298,8 @@ kubectl apply -f todo-app.yaml -n todo-app
 #### 4.2.6. kubectl label:
 #### 4.2.7. kubectl anotate:
 #### 4.2.8. kubectl logs:
-#### 4.2.9. kubectl delete:
+#### 4.2.9. kubectl exec:
+#### 4.2.10. kubectl delete:
 - Namespaces:
 ```
 kubectl delete ns todo-app
