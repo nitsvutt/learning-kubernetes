@@ -12,7 +12,7 @@
 ## 1. Kubernetes architecture
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=700/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=500/>
 </p>
 
 - **Control Plane (master):** orchestrates containers and maintains the desired state of the cluster.
@@ -31,7 +31,7 @@
 ## 2. How does Kubernetes work
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=700/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=500/>
 </p>
 
 - First, users need to package their application into one or more container images, push those images to an image registry, and then post a description of the application to the **API Server**.
@@ -377,7 +377,7 @@ kubectl scale -f todo-app.yaml -n todo-app --replicas=3
 ### 5.1. Overview:
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/example-architecture.png" title="Example architecture" alt="example architecture" width=700/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/example-architecture.png" title="Example architecture" alt="example architecture" width=500/>
 </p>
 
 - **Problem**: Deploy a todo web application on Kubernetes Cluster.
