@@ -360,6 +360,18 @@ kubectl delete -f todo-app.yaml -n todo-app
 > Options:
 > - `-l key=value`: filter with label selectors.
 
+#### 4.2.11. kubectl scale:
+```
+kubectl scale deploy/todo-app -n todo-app --replicas=3
+```
+```
+kubectl scale -f todo-app.yaml -n todo-app --replicas=3
+```
+> Options:
+> - `-l key=value`: filter with label selectors.
+
 <div id="practice"/>
 
 ## 5. Practice:
+
+### 5.1. Overview:
