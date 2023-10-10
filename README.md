@@ -311,6 +311,20 @@ kubectl label -f mysql-deploy.yaml -n todo-app dev=backend
 > Options:
 > - `-l key=value`: filter with label selectors.
 #### 4.2.7. kubectl anotate:
+```
+kubectl annotate svc mysql -n todo-app description='this is the entrypoint of mysql'
+```
+```
+kubectl annotate svc mysql -n todo-app description-
+```
+```
+kubectl annotate -f mysql-deploy.yaml -n todo-app overview='this is mysql deployment'
+```
+```
+kubectl annotate -f mysql-deploy.yaml -n todo-app overview-
+```
+> Options:
+> - `-l key=value`: filter with label selectors.
 #### 4.2.8. kubectl logs:
 #### 4.2.9. kubectl exec:
 ```
