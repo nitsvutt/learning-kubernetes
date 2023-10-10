@@ -295,7 +295,21 @@ kubectl apply -f todo-app.yaml -n todo-app
 > - `kubectl create` and `kubectl apply` can be used to create resources interchangeably.
 > - `kubectl create` does not support updating resources.
 #### 4.2.5. kubectl edit:
+```
+kubectl edit svc/mysql -n todo-app
+```
+```
+kubectl edit -f todo-app.yaml -n todo-app
+```
 #### 4.2.6. kubectl label:
+```
+kubectl label po mysql-7bc458848f-96f4p -n todo-app dev=backend
+```
+```
+kubectl label -f mysql-deploy.yaml -n todo-app dev=backend
+```
+> Options:
+> - `-l key=value`: filter with label selectors.
 #### 4.2.7. kubectl anotate:
 #### 4.2.8. kubectl logs:
 #### 4.2.9. kubectl exec:
