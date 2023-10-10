@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: todo-app
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 3001
     targetPort: 3000
