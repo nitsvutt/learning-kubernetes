@@ -326,6 +326,13 @@ kubectl annotate -f mysql-deploy.yaml -n todo-app overview-
 > Options:
 > - `-l key=value`: filter with label selectors.
 #### 4.2.8. kubectl logs:
+```
+kubectl logs mysql-7bc458848f-96f4p -n todo-app
+```
+> Options:
+> - `-f`: follow the logs.
+> - `--tail=i`: generate last i logs.
+> - `-l key=value`: filter with label selectors.
 #### 4.2.9. kubectl exec:
 ```
 kubectl exec -it mysql-7bc458848f-96f4p -n todo-app bash
