@@ -402,7 +402,7 @@ docker push nitsvutt/todo-app
 - Write a .yaml file like [mysql-deploy.yaml](https://github.com/nitsvutt/learning-kubernetes/blob/main/source/todo-app/db/mysql-deploy.yaml) to deploy a mysql deployment and its' ClusterIP.
 - Write a .yaml file like [todo-app.yaml](https://github.com/nitsvutt/learning-kubernetes/blob/main/source/todo-app/app/todo-app.yaml) to deploy a todo-app deployment and its' NodePort.
 
-### 5.4. Deploy all necessary resource:
+### 5.4. Deploy all necessary resources:
 - Move to todo-app directory:
 ```
 cd learning-kubernetes/source/todo-app/
