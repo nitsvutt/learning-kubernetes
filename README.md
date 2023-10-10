@@ -200,7 +200,7 @@ kubeadm reset
 kubectl get no
 ```
 ```
-kubectl get no worker3
+kubectl get no worker2
 ```
 - Namespaces:
 ```
@@ -297,7 +297,7 @@ kubectl apply -f todo-app.yaml -n todo-app
 > - `kubectl create` does not support updating resources.
 #### 4.2.5. kubectl edit:
 ```
-kubectl edit svc/mysql -n todo-app
+kubectl edit svc mysql -n todo-app
 ```
 ```
 kubectl edit -f todo-app.yaml -n todo-app
@@ -362,7 +362,7 @@ kubectl delete -f todo-app.yaml -n todo-app
 
 #### 4.2.11. kubectl scale:
 ```
-kubectl scale deploy/todo-app -n todo-app --replicas=3
+kubectl scale deploy todo-app -n todo-app --replicas=3
 ```
 ```
 kubectl scale -f todo-app.yaml -n todo-app --replicas=3
