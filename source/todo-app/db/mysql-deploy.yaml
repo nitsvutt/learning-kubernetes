@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: mysql
 spec:
+  replicas: 2
   ports:
   - port: 3306
   selector:
