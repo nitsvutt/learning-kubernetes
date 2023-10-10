@@ -428,5 +428,5 @@ kubectl apply -f todo-app.yaml -n todo-app
 - Now you can enjoy your app on arbitrary machine residing in the same network with the Kubernetes Cluster through any master/workers ip with port 30000.
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/todo-app-ui.png" title="todo-app UI" alt="todo-app ui" width=700/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/todo-app-ui.png" title="todo-app UI" alt="todo-app ui" width=100%/>
 </p>
