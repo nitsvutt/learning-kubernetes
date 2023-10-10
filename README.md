@@ -424,7 +424,7 @@ kubectl apply -f db/mysql-deploy.yaml -n todo-app
 kubectl apply -f todo-app.yaml -n todo-app
 ```
 
-### Enjoy your app:
+### 5.5. Enjoy your app:
 - Now you can enjoy your app on arbitrary machine residing in the same network with the Kubernetes Cluster through any master/workers ip with port 30000.
 
 <p align="center">
