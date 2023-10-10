@@ -375,3 +375,10 @@ kubectl scale -f todo-app.yaml -n todo-app --replicas=3
 ## 5. Practice:
 
 ### 5.1. Overview:
+
+<p align="center">
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/example-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=700/>
+</p>
+
+- **Problem**: Deploy a todo web application on Kubernetes Cluster.
+- **Approach**: The application contains 2 main components, a web app and a database. In this example, I use the getting-started-app on [Docker Github](https://github.com/docker/getting-started-app) to build the todo-app image and utilize the existing mysql image from [Docker Hub](https://hub.docker.com/_/mysql). In order to persist the app's data, I create a local PersistentVolume (not recommend for production) and its' PersistentVolumeClaim for mysql database usage. Finally, a ClusterIP for mysql deployment and a NodePort for the todo-app deployment are mandotory to support communication.
