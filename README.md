@@ -5,6 +5,7 @@
 2. [How does Kubernetes work](#work)
 3. [Set up Kubernetes cluster with kubeadm](#set-up)
 4. [Cheat sheet](#cheat-sheet)
+5. [Practice](#practice)
 
 <div id="architecture"/>
 
@@ -358,3 +359,7 @@ kubectl delete -f todo-app.yaml -n todo-app
 ```
 > Options:
 > - `-l key=value`: filter with label selectors.
+
+<div id="practice"/>
+
+## 5. Practice:
