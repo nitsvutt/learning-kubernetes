@@ -299,6 +299,9 @@ kubectl apply -f todo-app.yaml -n todo-app
 #### 4.2.7. kubectl anotate:
 #### 4.2.8. kubectl logs:
 #### 4.2.9. kubectl exec:
+```
+kubectl exec -it mysql-7bc458848f-96f4p -n todo-app bash
+```
 #### 4.2.10. kubectl delete:
 - Namespaces:
 ```
