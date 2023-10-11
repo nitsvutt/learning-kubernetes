@@ -393,7 +393,7 @@ kubectl scale -f todo-app.yaml -n todo-app --replicas=3
 git clone https://github.com/nitsvutt/learning-kubernetes.git
 ```
 ```
-docker build -f learning-kubernetes/source/todo-app/app/Dockerfile -t nitsvutt/todo-app .
+docker build -f learning-kubernetes/source/todo-app/prepare/Dockerfile -t nitsvutt/todo-app .
 ```
 - Push the image to Docker Hub:
 ```
