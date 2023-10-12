@@ -71,9 +71,9 @@ RUN touch ${SPARK_HISTORY_LOG}
 RUN ln -sf /dev/stdout ${SPARK_MASTER_LOG}
 RUN ln -sf /dev/stdout ${SPARK_WORKER_LOG}
 RUN ln -sf /dev/stdout ${SPARK_HISTORY_LOG}
+RUN mkdir /opt/spark-events
 
 # copy config and start file from host
-RUN mkdir /opt/spark-events
 COPY spark-defaults.conf /opt/spark/conf/
 COPY start-spark.sh /opt/spark/
 
