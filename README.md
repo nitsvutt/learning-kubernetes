@@ -315,7 +315,35 @@ kubectl edit svc mysql -n todo-app
 ```
 kubectl edit -f todo-app.yaml -n todo-app
 ```
-#### 4.2.6. kubectl label:
+
+#### 4.2.6. kubectl replace:
+- Namespaces:
+```
+kubectl replace -f ns.yaml
+```
+- Other resources:
+```
+kubectl replace -f todo-app.yaml -A
+```
+```
+kubectl replace -f todo-app.yaml -n todo-app
+```
+> Note:
+> - `kubectl replace` require the resource to exist.
+
+#### 4.2.7. kubectl patch:
+
+#### 4.2.8. kubectl set image:
+```
+kubectl set image deploy mysql mysql=mysql:8.1 -A
+```
+```
+kubectl set image deploy mysql mysql=mysql:8.1 -n todo-app
+```
+> Options:
+> - `-l key=value`: define label selectors.
+
+#### 4.2.9. kubectl label:
 ```
 kubectl label po mysql-7bc458848f-96f4p -n todo-app dev=backend
 ```
@@ -324,7 +352,7 @@ kubectl label -f mysql-deploy.yaml -n todo-app dev=backend
 ```
 > Options:
 > - `-l key=value`: filter with label selectors.
-#### 4.2.7. kubectl anotate:
+#### 4.2.10. kubectl anotate:
 ```
 kubectl annotate svc mysql -n todo-app description='this is the entrypoint of mysql'
 ```
@@ -339,7 +367,7 @@ kubectl annotate -f mysql-deploy.yaml -n todo-app overview-
 ```
 > Options:
 > - `-l key=value`: filter with label selectors.
-#### 4.2.8. kubectl logs:
+#### 4.2.11. kubectl logs:
 ```
 kubectl logs mysql-7bc458848f-96f4p -n todo-app
 ```
@@ -347,11 +375,11 @@ kubectl logs mysql-7bc458848f-96f4p -n todo-app
 > - `-f`: follow the logs.
 > - `--tail=i`: generate last i logs.
 > - `-l key=value`: filter with label selectors.
-#### 4.2.9. kubectl exec:
+#### 4.2.12. kubectl exec:
 ```
 kubectl exec -it mysql-7bc458848f-96f4p -n todo-app bash
 ```
-#### 4.2.10. kubectl delete:
+#### 4.2.13. kubectl delete:
 - Namespaces:
 ```
 kubectl delete ns todo-app
@@ -373,7 +401,7 @@ kubectl delete -f todo-app.yaml -n todo-app
 > Options:
 > - `-l key=value`: filter with label selectors.
 
-#### 4.2.11. kubectl scale:
+#### 4.2.14. kubectl scale:
 ```
 kubectl scale deploy todo-app -n todo-app --replicas=3
 ```
