@@ -259,6 +259,16 @@ kubectl get deploy -n kube-system
 ```
 kubectl get deploy calico-kube-controllers -n kube-system
 ```
+- Replicasets:
+```
+kubectl get replicaset -A
+```
+```
+kubectl get replicaset -n kube-system
+```
+```
+kubectl get replicaset coredns-5dd5756b68 -n kube-system
+```
 > Get options:
 > - `-o wide`: view more information.
 > - `-o yaml`: view the description file.
