@@ -419,13 +419,13 @@ kubectl scale -f todo-app.yaml -n todo-app --replicas=3
 
 #### 4.2.15. kubectl rollout:
 ```
-kubectl rollout status
+kubectl rollout status deploy mysql -n todo-app
 ```
 ```
-kubectl rollout history deploy mysql
+kubectl rollout history deploy mysql -n todo-app
 ```
 ```
-kubectl rollout undo deploy mysql --to-revision=1
+kubectl rollout undo deploy mysql -n todo-app --to-revision=1
 ```
 
 <div id="practice"/>
