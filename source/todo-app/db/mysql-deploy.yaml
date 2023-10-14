@@ -19,7 +19,7 @@ spec:
     matchLabels:
       app: mysql
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       labels:
