@@ -33,6 +33,8 @@
 
 ## 2. How does Kubernetes work
 
+### 2.1. Deployment lifecycle:
+
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=600/>
 </p>
@@ -41,6 +43,12 @@
 - At the following stage, the **API Server** process the application's description. After that, the **Scheduler** schedule the specified groups of containers (including the desired replicas) onto the available worker nodes based on the resources required by each group and the unallocated resources on each node.
 - Finnally, the **Kubelet** on those nodes then instructs the **Container Runtime** to pull the required container images and run them.
 - Additional, the **Controller Manager** then keeps track and and guarantees the desired state of all containers.
+
+### 2.2. Update application:
+
+#### 2.2.1. ReCreate strategy:
+
+#### 2.2.2. RollingUdpate strategy:
 
 <div id="set-up"/>
 
@@ -341,10 +349,10 @@ kubectl patch -f mysql-deploy.yaml -n todo-app -p '{"spec":{"template":{"spec":{
 
 #### 4.2.8. kubectl set image:
 ```
-kubectl set image deploy mysql mysql=mysql:8.1 -A
+kubectl set image deploy mysql -A mysql=mysql:8.1
 ```
 ```
-kubectl set image deploy mysql mysql=mysql:8.1 -n todo-app
+kubectl set image deploy mysql -n todo-app mysql=mysql:8.1
 ```
 > Options:
 > - `-l key=value`: define label selectors.
@@ -360,16 +368,16 @@ kubectl label -f mysql-deploy.yaml -n todo-app dev=backend
 > - `-l key=value`: filter with label selectors.
 #### 4.2.10. kubectl anotate:
 ```
-kubectl annotate svc mysql -n todo-app description='this is the entrypoint of mysql'
+kubectl annotate deploy mysql -n todo-app kubernetes.io/change-cause='mysql:8.0 deployment'
 ```
 ```
-kubectl annotate svc mysql -n todo-app description-
+kubectl annotate deploy mysql -n todo-app kubernetes.io/change-cause-
 ```
 ```
-kubectl annotate -f mysql-deploy.yaml -n todo-app overview='this is mysql deployment'
+kubectl annotate -f mysql-deploy.yaml -n todo-app kubernetes.io/change-cause='mysql:8.0 deployment'
 ```
 ```
-kubectl annotate -f mysql-deploy.yaml -n todo-app overview-
+kubectl annotate -f mysql-deploy.yaml -n todo-app kubernetes.io/change-cause-
 ```
 > Options:
 > - `-l key=value`: filter with label selectors.
@@ -426,6 +434,12 @@ kubectl rollout history deploy mysql -n todo-app
 ```
 ```
 kubectl rollout undo deploy mysql -n todo-app --to-revision=1
+```
+```
+kubectl rollout pause deploy mysql -n todo-app
+```
+```
+kubectl rollout resume deploy mysql -n todo-app
 ```
 
 <div id="practice"/>
