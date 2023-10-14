@@ -488,3 +488,5 @@ kubectl apply -f todo-app.yaml -n todo-app
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/todo-app-ui.png" title="todo-app UI" alt="todo-app ui" width=100%/>
 </p>
+
+- Now you may want to give RollingUpdate a try with `kubectl set image deploy mysql mysql=mysql:8.1 -n todo-app`, you can refresh the app continuously without experiencing any downtime.
