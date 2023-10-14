@@ -332,6 +332,12 @@ kubectl replace -f todo-app.yaml -n todo-app
 > - `kubectl replace` require the resource to exist.
 
 #### 4.2.7. kubectl patch:
+```
+kubectl patch po mysql-7bc458848f-96f4p -n todo-app -p '{"spec":{"containers":[{"name":"mysql","image":"mysql:8.1"}]}}'
+```
+```
+kubectl patch -f mysql-deploy.yaml -n todo-app -p '{"spec":{"template":{"spec":{"containers":[{"name":"mysql","image":"mysql:8.1"}]}}}}'
+```
 
 #### 4.2.8. kubectl set image:
 ```
