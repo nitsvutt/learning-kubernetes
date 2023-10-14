@@ -417,6 +417,17 @@ kubectl scale -f todo-app.yaml -n todo-app --replicas=3
 > Options:
 > - `-l key=value`: filter with label selectors.
 
+#### 4.2.15. kubectl rollout:
+```
+kubectl rollout status
+```
+```
+kubectl rollout history deploy mysql
+```
+```
+kubectl rollout undo deploy mysql --to-revision=1
+```
+
 <div id="practice"/>
 
 ## 5. Practice:
