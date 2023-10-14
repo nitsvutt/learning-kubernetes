@@ -48,7 +48,15 @@
 
 #### 2.2.1. ReCreate strategy:
 
+<p align="center">
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/recreate.png" title="Recreate" alt="recreate" height=300/>
+</p>
+
 #### 2.2.2. RollingUdpate strategy:
+
+<p align="center">
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/rollingupdate.png" title="RollingUpdate" alt="rollingupdate" height=300/>
+</p>
 
 <div id="set-up"/>
 
