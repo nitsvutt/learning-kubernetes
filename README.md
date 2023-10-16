@@ -57,7 +57,7 @@
 #### 2.2.2. RollingUpdate strategy:
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/rollingupdate.png" title="RollingUpdate" alt="rollingupdate" height=173/>
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/rollingupdate.png" title="RollingUpdate" alt="rollingupdate" height=100% width=100%/>
 </p>
 
 - With `RollingUpdate` strategy, when making an update instruction to a deployment, Kubernetes create new replicaset immediately. Assume that the `maxUnavailable` property is set to `m` and the `maxSurge` is set to `n` (with `m`, `n` are integer). `m` old pod(s) will be deleted by Kubernetes and then `m+n` new pod(s) will be appended to the cluster. The process loop until the desired state of the new replicaset is ensured.
