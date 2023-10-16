@@ -56,7 +56,7 @@
 
 #### 2.2.2. RollingUpdate strategy:
 
-<p align="center">
+<p>
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/rollingupdate.png" title="RollingUpdate" alt="rollingupdate" width=980 height=200/>
 </p>
 
