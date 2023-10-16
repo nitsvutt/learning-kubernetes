@@ -49,7 +49,7 @@
 #### 2.2.1. ReCreate strategy:
 
 <p align="center">
-    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/recreate.png" title="Recreate" alt="recreate" width=100%  />
+    <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/recreate.png" title="Recreate" alt="recreate" height=100%  />
 </p>
 
 - With `Recreate` strategy, when making an update instruction to a deployment, the pod template of the deployment's replicaset change immediately. After that, all old pods are deleted by Kubernetes, the replicaset now have to ensure that the cluster in the desired state. As a result, new pods with new template are created and new application version is released.
