@@ -4,7 +4,7 @@
 ![forks](https://img.shields.io/github/forks/nitsvutt/learning-kubernetes)
 
 ## Table of Contents
-1. [hat is Kubernetes](#overview)
+1. [What is Kubernetes](#overview)
 2. [Kubernetes architecture](#architecture)
 3. [How does Kubernetes work](#work)
 4. [Set up Kubernetes cluster with kubeadm](#set-up)
