@@ -4,15 +4,22 @@
 ![forks](https://img.shields.io/github/forks/nitsvutt/learning-kubernetes)
 
 ## Table of Contents
-1. [Kubernetes architecture](#architecture)
-2. [How does Kubernetes work](#work)
-3. [Set up Kubernetes cluster with kubeadm](#set-up)
-4. [Cheat sheet](#cheat-sheet)
-5. [Practice](#practice)
+1. [hat is Kubernetes](#overview)
+2. [Kubernetes architecture](#architecture)
+3. [How does Kubernetes work](#work)
+4. [Set up Kubernetes cluster with kubeadm](#set-up)
+5. [Cheat sheet](#cheat-sheet)
+6. [Practice](#practice)
 
 <div id="architecture"/>
 
-## 1. Kubernetes architecture
+1. What is Kubernetes
+
+Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.
+
+<div id="architecture"/>
+
+## 2. Kubernetes architecture
 
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-architecture.png" title="Kubernetes architecture" alt="kubernetes architecture" width=600/>
@@ -31,9 +38,9 @@
 
 <div id="work"/>
 
-## 2. How does Kubernetes work
+## 3. How does Kubernetes work
 
-### 2.1. Application deployment
+### 3.1. Application deployment
 
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/kubernetes-work.png" title="Kubernetes' work" alt="kubernetes' work" width=600/>
@@ -44,9 +51,9 @@
 - Finnally, the **Kubelet** on those nodes then instructs the **Container Runtime** to pull the required container images and run them.
 - Additional, the **Controller Manager** then keeps track and and guarantees the desired state of all containers.
 
-### 2.2.Application development:
+### 3.2.Application development:
 
-#### 2.2.1. ReCreate strategy:
+#### 3.2.1. ReCreate strategy:
 
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/recreate.png" title="Recreate" alt="recreate" height=200px/>
@@ -54,7 +61,7 @@
 
 - With `Recreate` strategy, when making an update instruction to a deployment, the pod template of the deployment's replicaset change immediately. After that, all old pods are deleted by Kubernetes, the replicaset now have to ensure that the cluster in the desired state. As a result, new pods with new template are created and new application version is released.
 
-#### 2.2.2. RollingUpdate strategy:
+#### 3.2.2. RollingUpdate strategy:
 
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/rollingupdate.png" title="RollingUpdate" alt="rollingupdate" height=200px/>
@@ -64,9 +71,9 @@
 
 <div id="set-up"/>
 
-## 3. Set up Kubernetes cluster with kubeadm
+## 4. Set up Kubernetes cluster with kubeadm
 
-### 3.1. Set up SSH, vim, and cURL
+### 4.1. Set up SSH, vim, and cURL
 - Switch to the superuser:
 ```
 su root
@@ -80,7 +87,7 @@ ufw allow ssh
 systemctl start ssh
 ```
 
-### 3.2. Set static hostname
+### 4.2. Set static hostname
 - Master:
 ```
 hostnamectl set-hostname master --static
@@ -94,7 +101,7 @@ hostnamectl set-hostname worker1 --static
 hostnamectl set-hostname worker2 --static
 ```
 
-### 3.3. Append ip, hostname to host file
+### 4.3. Append ip, hostname to host file
 ```
 vi /etc/hosts
 ```
@@ -104,13 +111,13 @@ vi /etc/hosts
 192.168.0.107   worker2
 ```
 
-### 3.4. Disable swap space
+### 4.4. Disable swap space
 ```
 sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
 swapoff -a
 ```
 
-### 3.5. Add kernel modules
+### 4.5. Add kernel modules
 ```
 tee /etc/modules-load.d/containerd.conf <<EOF
 overlay
@@ -122,7 +129,7 @@ modprobe overlay
 modprobe br_netfilter
 ```
 
-### 3.6 Enable IP forwarding
+### 4.6 Enable IP forwarding
 ```
 tee /etc/sysctl.d/kubernetes.conf<<EOF
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -134,7 +141,7 @@ EOF
 sysctl --system
 ```
 
-### 3.7. Install container runtime
+### 4.7. Install container runtime
 - Install requirement dependencies for containerd:
 ```
 apt install gnupg2 software-properties-common apt-transport-https ca-certificates -y
@@ -160,7 +167,7 @@ systemctl restart containerd
 systemctl enable containerd
 ```
 
-### 3.8. Install kubectl, kubelet, and kubeadm
+### 4.8. Install kubectl, kubelet, and kubeadm
 - Add Kubernetes repository:
 ```
 curl -fsSL  https://packages.cloud.google.com/apt/doc/apt-key.gpg|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k8s.gpg
@@ -172,7 +179,7 @@ apt update
 apt install kubelet kubeadm kubectl -y
 ```
 
-### 3.9. Initialize Kubernetes cluster using kubeadm (only on master node)
+### 4.9. Initialize Kubernetes cluster using kubeadm (only on master node)
 - Initialize the Control Plane:
 ```
 kubeadm init --control-plane-endpoint=master
@@ -188,16 +195,16 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 ```
 
-### 3.10. Join Kubernetes cluster (only on worker nodes)
+### 4.10. Join Kubernetes cluster (only on worker nodes)
 ```
 kubeadm join master:6443 --token qvafpa.64eu73o0evu394ka --discovery-token-ca-cert-hash sha256:9c58e793cb9067ab131da5074cfe60eba1007ea1e5a3824d399df7310985ec80
 ```
 
 <div id="cheat-sheet"/>
 
-## 4. Cheat sheet
+## 5. Cheat sheet
 
-### 4.1. kubeadm
+### 5.1. kubeadm
 - Initialize the Control Plane:
 ```
 kubeadm init --control-plane-endpoint=master
@@ -215,9 +222,9 @@ kubeadm join master:6443 --token qvafpa.64eu73o0evu394ka --discovery-token-ca-ce
 kubeadm reset
 ```
 
-### 4.2. kubectl
+### 5.2. kubectl
 
-#### 4.2.1. kubectl get/describe
+#### 5.2.1. kubectl get/describe
 - Nodes:
 ```
 kubectl get no
@@ -296,7 +303,7 @@ kubectl get replicaset coredns-5dd5756b68 -n kube-system
 > 
 > Describe options:
 > - `-l key=value`: filter with label selectors.
-#### 4.2.3. kubectl create
+#### 5.2.3. kubectl create
 - Namespaces:
 ```
 kubectl create ns todo-app
@@ -313,7 +320,7 @@ kubectl create -f todo-app.yaml -n todo-app
 ```
 > Options:
 > - `-l key=value`: define label selectors.
-#### 4.2.4. kubectl apply
+#### 5.2.4. kubectl apply
 - Namespaces:
 ```
 kubectl apply -f ns.yaml
@@ -328,7 +335,7 @@ kubectl apply -f todo-app.yaml -n todo-app
 > Note:
 > - `kubectl create` and `kubectl apply` can be used to create resources interchangeably.
 > - `kubectl create` does not support updating resources.
-#### 4.2.5. kubectl edit
+#### 5.2.5. kubectl edit
 ```
 kubectl edit svc mysql -n todo-app
 ```
@@ -336,7 +343,7 @@ kubectl edit svc mysql -n todo-app
 kubectl edit -f todo-app.yaml -n todo-app
 ```
 
-#### 4.2.6. kubectl replace
+#### 5.2.6. kubectl replace
 - Namespaces:
 ```
 kubectl replace -f ns.yaml
@@ -351,7 +358,7 @@ kubectl replace -f todo-app.yaml -n todo-app
 > Note:
 > - `kubectl replace` require the resource to exist.
 
-#### 4.2.7. kubectl patch
+#### 5.2.7. kubectl patch
 ```
 kubectl patch po mysql-7bc458848f-96f4p -n todo-app -p '{"spec":{"containers":[{"name":"mysql","image":"mysql:8.1"}]}}'
 ```
@@ -359,7 +366,7 @@ kubectl patch po mysql-7bc458848f-96f4p -n todo-app -p '{"spec":{"containers":[{
 kubectl patch -f mysql-deploy.yaml -n todo-app -p '{"spec":{"template":{"spec":{"containers":[{"name":"mysql","image":"mysql:8.1"}]}}}}'
 ```
 
-#### 4.2.8. kubectl set image
+#### 5.2.8. kubectl set image
 ```
 kubectl set image deploy mysql -A mysql=mysql:8.1
 ```
@@ -369,7 +376,7 @@ kubectl set image deploy mysql -n todo-app mysql=mysql:8.1
 > Options:
 > - `-l key=value`: define label selectors.
 
-#### 4.2.9. kubectl label
+#### 5.2.9. kubectl label
 ```
 kubectl label po mysql-7bc458848f-96f4p -n todo-app dev=backend
 ```
@@ -378,7 +385,7 @@ kubectl label -f mysql-deploy.yaml -n todo-app dev=backend
 ```
 > Options:
 > - `-l key=value`: filter with label selectors.
-#### 4.2.10. kubectl anotate
+#### 5.2.10. kubectl anotate
 ```
 kubectl annotate deploy mysql -n todo-app kubernetes.io/change-cause='mysql:8.0 deployment'
 ```
@@ -393,7 +400,7 @@ kubectl annotate -f mysql-deploy.yaml -n todo-app kubernetes.io/change-cause-
 ```
 > Options:
 > - `-l key=value`: filter with label selectors.
-#### 4.2.11. kubectl logs
+#### 5.2.11. kubectl logs
 ```
 kubectl logs mysql-7bc458848f-96f4p -n todo-app
 ```
@@ -401,11 +408,11 @@ kubectl logs mysql-7bc458848f-96f4p -n todo-app
 > - `-f`: follow the logs.
 > - `--tail=i`: generate last i logs.
 > - `-l key=value`: filter with label selectors.
-#### 4.2.12. kubectl exec
+#### 5.2.12. kubectl exec
 ```
 kubectl exec -it mysql-7bc458848f-96f4p -n todo-app bash
 ```
-#### 4.2.13. kubectl delete
+#### 5.2.13. kubectl delete
 - Namespaces:
 ```
 kubectl delete ns todo-app
@@ -427,7 +434,7 @@ kubectl delete -f todo-app.yaml -n todo-app
 > Options:
 > - `-l key=value`: filter with label selectors.
 
-#### 4.2.14. kubectl scale
+#### 5.2.14. kubectl scale
 ```
 kubectl scale deploy todo-app -n todo-app --replicas=3
 ```
@@ -437,7 +444,7 @@ kubectl scale -f todo-app.yaml -n todo-app --replicas=3
 > Options:
 > - `-l key=value`: filter with label selectors.
 
-#### 4.2.15. kubectl rollout
+#### 5.2.15. kubectl rollout
 ```
 kubectl rollout status deploy mysql -n todo-app
 ```
@@ -456,9 +463,9 @@ kubectl rollout resume deploy mysql -n todo-app
 
 <div id="practice"/>
 
-## 5. Practice
+## 6. Practice
 
-### 5.1. Overview
+### 6.1. Overview
 
 <p align="center">
     <img src="https://github.com/nitsvutt/learning-kubernetes/blob/main/image/example-architecture.png" title="Example architecture" alt="example architecture" width=600/>
@@ -467,7 +474,7 @@ kubectl rollout resume deploy mysql -n todo-app
 - **Problem**: Deploy a todo web application on Kubernetes Cluster.
 - **Approach**: The application contains 2 main components, a web app and a database. In this example, I use the getting-started-app on [Docker Github](https://github.com/docker/getting-started-app) to build the todo-app image and utilize the existing mysql image from [Docker Hub](https://hub.docker.com/_/mysql). In order to persist the app's data, I create a local PersistentVolume (not recommend for production) and its' PersistentVolumeClaim for mysql database usage. Finally, a ClusterIP for mysql deployment and a NodePort for the todo-app deployment are mandotory to support communication.
 
-### 5.2. Prepare images
+### 6.2. Prepare images
 
 - Download my Dockerfile and build todo-app image:
 ```
@@ -481,12 +488,12 @@ docker build -f learning-kubernetes/source/todo-app/prepare/Dockerfile -t nitsvu
 docker push nitsvutt/todo-app
 ```
 
-### 5.3. Prepare .yaml files
+### 6.3. Prepare .yaml files
 - Write a .yaml file like [mysql-vol.yaml](https://github.com/nitsvutt/learning-kubernetes/blob/main/source/todo-app/db/mysql-vol.yaml) to create a PersistentVolume and a PersitentVolumeClaim.
 - Write a .yaml file like [mysql-deploy.yaml](https://github.com/nitsvutt/learning-kubernetes/blob/main/source/todo-app/db/mysql-deploy.yaml) to deploy a mysql deployment and its' ClusterIP.
 - Write a .yaml file like [todo-app.yaml](https://github.com/nitsvutt/learning-kubernetes/blob/main/source/todo-app/app/todo-app.yaml) to deploy a todo-app deployment and its' NodePort.
 
-### 5.4. Deploy all necessary resources
+### 6.4. Deploy all necessary resources
 - Move to todo-app directory:
 ```
 cd learning-kubernetes/source/todo-app/
@@ -508,7 +515,7 @@ kubectl apply -f db/mysql-deploy.yaml -n todo-app
 kubectl apply -f todo-app.yaml -n todo-app
 ```
 
-### 5.5. Enjoy your app
+### 6.5. Enjoy your app
 - Now you can enjoy your app on arbitrary machine residing in the same network with the Kubernetes Cluster through any master/workers ip with port 30000.
 
 <p align="center">
