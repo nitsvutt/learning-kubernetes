@@ -51,7 +51,7 @@ Kubernetes is a portable, extensible, open source platform for managing containe
 - Finnally, the **Kubelet** on those nodes then instructs the **Container Runtime** to pull the required container images and run them.
 - Additional, the **Controller Manager** then keeps track and and guarantees the desired state of all containers.
 
-### 3.2.Application development:
+### 3.2. Application development:
 
 #### 3.2.1. ReCreate strategy:
 
