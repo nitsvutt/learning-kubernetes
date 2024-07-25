@@ -48,7 +48,7 @@ Kubernetes is a portable, extensible, open source platform for managing containe
 
 - First, users need to package their application into one or more container images, push those images to an image registry, and then post a description of the application to the **API Server**.
 - At the following stage, the **API Server** process the application's description. After that, the **Scheduler** schedule the specified groups of containers (including the desired replicas) onto the available worker nodes based on the resources required by each group and the unallocated resources on each node.
-- Finnally, the **Kubelet** on those nodes then instructs the **Container Runtime** to pull the required container images and run them.
+- Finally, the **Kubelet** on those nodes then instructs the **Container Runtime** to pull the required container images and run them.
 - Additional, the **Controller Manager** then keeps track and and guarantees the desired state of all containers.
 
 ### 3.2. Application development:
