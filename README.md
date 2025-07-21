@@ -28,7 +28,7 @@ Kubernetes is a portable, extensible, open source platform for managing containe
 - **Control Plane (master):** orchestrates containers and maintains the desired state of the cluster.
     - **API Server:** works as the central hub that expose the Kubernetes API. All users and other cluster components communicate with the cluster via the API server.
     - **etcd:** is a consistent and highly-available key value store that stores all cluster data.
-    - **Scheduler:** recieves pod creation requests and select the best node that satisfies the pod requirements.
+    - **Scheduler:** receives pod creation requests and select the best node that satisfies the pod requirements.
     - **Controller Manager:** runs continuously and ensures that the kubernetes resource/object is in the desired state.
 - **Worker Node:** runs containerized applications.
     - **Kubelet:** communicates with the API server and works with the pod specification as a daemon.
