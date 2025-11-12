@@ -1,7 +1,4 @@
 # Learning Kubernetes
-![license](https://img.shields.io/github/license/nitsvutt/learning-kubernetes)
-![stars](https://img.shields.io/github/stars/nitsvutt/learning-kubernetes)
-![forks](https://img.shields.io/github/forks/nitsvutt/learning-kubernetes)
 
 ## Table of Contents
 1. [What is Kubernetes](#overview)
